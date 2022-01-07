@@ -7,7 +7,7 @@ int main(int argc, char *argv[]){
 	int blanks; /* # of blanks to add */
 
 	while((c=getchar()) != EOF){
-		if(c != '\t' && c != '\n'){
+		if(c != '\t' && c != '\n' && c != '\b'){
 			putchar(c); /*If c isn't a tab or newLine */
 			currPos++;
 		}
@@ -23,6 +23,12 @@ int main(int argc, char *argv[]){
 			currPos = 0;
 			putchar(c);
 	
+		} 
+		else if(c== '\b'){ /*Don't allow backspaces past left margin*/
+			if(currPos != 0){
+				putchar(c);
+				currPos--;
+			}
 		}
 	}
 
