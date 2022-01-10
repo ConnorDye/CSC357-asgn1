@@ -30,6 +30,10 @@ int main(int argc, char *argv[]){
 			}
 			putchar(c);
 		}
+		else if(c=='\r'){
+			currPos = 0;
+			putchar(c);
+		}
 	}
 
 	return 0;
