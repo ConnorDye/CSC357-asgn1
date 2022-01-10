@@ -26,9 +26,9 @@ int main(int argc, char *argv[]){
 		} 
 		else if(c== '\b'){ /*Don't allow backspaces past left margin*/
 			if(currPos != 0){
-				putchar(c);
 				currPos--;
 			}
+			putchar(c);
 		}
 	}
 
